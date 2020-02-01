@@ -6,10 +6,11 @@ function Tile(props){
 
     
     const divStyle = {
-        boxShadow: `0px 10px 20px rgba(31, 32, 65, ${elevation}`
+        boxShadow: `0px 10px 20px rgba(31, 32, 65, ${elevation})`,
+        margin:"0 auto"
     }
 
-    return <Tile style={divStyle}>{children}></Tile>
+    return <div style={divStyle}>{children}</div>
 }
 
 export default Tile
@@ -19,5 +20,5 @@ Tile.propTypes = {
 }
 
 Tile.defaultPropTypes = {
-    elevation:"0.1"
+    elevation:"0.5"
 }
