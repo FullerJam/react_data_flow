@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Tile from './Tile'
 import Histogram from './Histogram'
-// import Percentage from './Percentage'
+import PercentageBar from './PercentageBar'
 
 function DaysCompleted(props) {
 
@@ -20,7 +20,6 @@ function DaysCompleted(props) {
         justifyContent:"space-between"
     }
 
-    const data = checkins.map((checkin) => <Histogram percentage={checkin.score * 5} />)
     return (
 
         <Tile>
@@ -28,8 +27,10 @@ function DaysCompleted(props) {
                 <h1 style={textStyle}> {days} Days Completed </h1>
             </div>
             <div style={histogramStyle}>
-                {data}
+                {checkins.map((checkin) => <Histogram percentage={checkin.score * 5} />)}
             </div>
+            <PercentageBar/>
+
         </Tile>
 
     )
