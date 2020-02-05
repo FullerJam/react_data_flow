@@ -26,6 +26,7 @@ function DaysCompleted(props) {
             <div style={headerContainer}>
                 <h1 style={textStyle}> {days} Days Completed </h1>
             </div>
+            {/* <Histogram percentage={checkins.map(checkin => checkin.score * 5)} ></Histogram> */}
             <div style={histogramStyle}>
                 {checkins.map((checkin) => <Histogram percentage={checkin.score * 5} />)}
             </div>

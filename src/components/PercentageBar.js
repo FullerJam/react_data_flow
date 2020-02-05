@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 function PercentageBar(props) {
   const { percentage } = props;
+
   const container = {
     marginTop: `20px`,
     width: `100%`,
@@ -18,7 +19,7 @@ function PercentageBar(props) {
     `#BC9CFF`,
     opacity: `100 !important`,
     height: `100%`,
-    width: `20%`,
+    width: `${percentage}`,
     borderRadius: `2px`
   }
 
