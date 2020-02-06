@@ -1,31 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
 
 function Bar(props) {
     const { percentage } = props;
-    const barStyle = {
+    const BarStyle = styled.div`
         background:
-            "linear-gradient(180deg, rgba(56,149,95,.25), rgba(102,210,234,.25))",
-        width: "30px",
-        height: "70.74px",
-        borderRadius: "2px",
-        display: "flex",
-        alignItems: "flex-end"
-    };
+            linear-gradient(180deg, rgba(56,149,95,.25), rgba(102,210,234,.25));
+        width: 30px;
+        height: 70.74px;
+        border-radius: 2px;
+        display: flex;
+        align-items: flex-end;
+    `;
 
-    const innerBar = {
+    const InnerBar = styled.div`
         background:
-            "linear-gradient(180deg, rgba(56,149,95,1), rgba(102,210,234,0.5))",
-        opacity: "100 !important",
-        height: `${percentage}%`,
-        width: "100%",
-        borderRadius: "2px"
-    };
+            linear-gradient(180deg, rgba(56,149,95,1), rgba(102,210,234,0.5));
+        opacity: 100 !important;
+        height: ${ percentage }% ;
+        width: 100%;
+        border-radius: 2px;
+    `;
 
     return (
-        <div style={barStyle}>
-            <div style={innerBar}></div>
-        </div>
+        <BarStyle>
+            <InnerBar></InnerBar>
+        </BarStyle>
     );
 }
 
@@ -36,12 +38,13 @@ Bar.propTypes = {
 function Histogram(props) {
     const { percentage } = props;
 
+    const divStyle = {
+        display: "flex",
+        justifyContent: "space-around"
+    };
 
     return (
-        <div>
-
-            {/** I am a comment in JSX. We will need to loop here based on teh number of bars passed in */}
-            {/** I am think bars can be a percentage value 0-100 e.g. [0,10,100] */}
+        <div style={divStyle}>
             <Bar percentage={percentage} />
         </div>
     );

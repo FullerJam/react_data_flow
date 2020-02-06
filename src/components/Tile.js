@@ -1,24 +1,21 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-function Tile(props){
-    const { children, elevation } = props
 
-    
-    const divStyle = {
-        boxShadow: `0px 10px 20px rgba(31, 32, 65, ${elevation})`,
-        margin:"0 auto"
-    }
+const Tile = styled.div`
+box-shadow: 40px 10px 20px rgba(31, 32, 32, ${props => props.elevation});
+padding: 3%;
+margin:0 auto;
+`;
 
-    return <div style={divStyle}>{children}</div>
-}
-
-export default Tile
 
 Tile.propTypes = {
     elevation: PropTypes.string
-}
+};
 
-Tile.defaultPropTypes = {
-    elevation:"0.5"
-}
+Tile.defaultProps = {
+    elevation: "0.02"
+};
+
+export default Tile;
